@@ -1,14 +1,20 @@
- "use strict"; //treat all js code as newer version of js.
+ //"use strict"; //treat all js code as newer version of js.
  
 
 // alert("shivam") //it's part of browser not node 
 
-
+// primitive datatypes  : 7 => undefined, null , string, number (includes decimal as well) ,boolean , symbol , bigInt 
  let firstVar
- let secondVar=null
- let name="shivam"
- let age= 22
- let logged = true
+ const secondVar=null
+ const firstname="shivam"
+ const age= 22
+ const logged = true
+ const id= Symbol('354')
+ const anotherid = Symbol('354')
+ console.log(id === anotherid); // false 
+
+ const bignumber = 32456543456765456765365678987n
+
 
 /*
 undefined => when a variable is ont assigned any value
@@ -20,11 +26,38 @@ boolean => true/false
 symbol  => used to identyfy different components as unique .
 */ 
 
-console.log(typeof firstVar);
-console.log(typeof secondVar);
-console.log(typeof name);
-console.log(typeof age);
-console.log(typeof logged);
+console.log(typeof firstVar);// undefined
+console.log(typeof secondVar);//object remember null is of object type 
+console.log(typeof firstname); //string
+console.log(typeof age); // number
+console.log(typeof logged); // boolean
+console.log(typeof id); //symbol
+console.log( typeof bignumber); //bigint
+
+
+
+// Non primitive type (call by refernce): 3 => Array , object , function 
+
+//Array 
+const heroes = ["shaktiman" ,"naagraj","doga"]
+
+//object 
+let myobj = {
+    name: "Shivam",
+    age: 21,
+    // it can have any data type inside as objet like arr, object , function , string , number etc
+}
+
+//function
+
+const myfunc = function (){
+    console.log("Hello world!!");
+}
+
+console.log( typeof heroes); //object
+console.log( typeof myobj); //object
+console.log( typeof myfunc); //function we call it function object
+
 
 
 
