@@ -58,8 +58,32 @@ console.log( typeof heroes); //object
 console.log( typeof myobj); //object
 console.log( typeof myfunc); //function we call it function object
 
+//*************************************
+//                       Memory
+// Stack {primitive}                      Heap {non primitive}
+// a copy of value is given            reference to the value is given
+// changing does not impact other      changing impact all the variables using the reference
 
 
+let mymail = "shivam@gmail.com"
+let myanothermail = mymail;
+console.log(mymail);
+console.log(myanothermail);
+
+myanothermail="tiwari@gmail.com"
+console.log(mymail); // value remains the same for it 
+console.log(myanothermail);
+
+
+let userone = {
+    mail: "shivam@google.com",
+    age: 21
+}
+ 
+let usertwo= userone;
+usertwo.mail ="tiwari@google.com"
+console.log(userone.mail);//value changes to 'tiwari@google.com'
+console.log(usertwo.mail);
 
 
 
