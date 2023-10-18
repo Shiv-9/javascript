@@ -64,4 +64,20 @@ const users = [
 //     [ 'loggedIn', false ]
 // ]
 
-console.log(tinderUser.hasOwnProperty("loggedIn")); //true --> returns t/f , used to check whether a object has certain property or not
+//console.log(tinderUser.hasOwnProperty("loggedIn")); //true --> returns t/f , used to check whether a object has certain property or not
+
+const course ={
+    coursename: "JavaScript",
+    courseprice : "999",
+    courseInstructor: "Hitesh"
+}
+
+// we can access the values by course.coursename or course["coursename"] but every time doing this is a bit irritating 
+// we can use below method for this which makes it easier to access the elements 
+// It is known as Object destructing. 
+// const {coursename} = course
+// console.log(coursename);
+
+// or we can do like this to reduce the name even more
+const {courseInstructor : instructor} = course
+console.log(instructor);
