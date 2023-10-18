@@ -22,4 +22,34 @@ function loggedinusermessge(username = "Sam") // default value
 }
 
 //console.log(loggedinusermessge()) // undefined will be send as the paramter
-console.log(loggedinusermessge("Shivam"));//Shivam just logged in
+//console.log(loggedinusermessge("Shivam"));//Shivam just logged in
+
+
+
+// function calculatePrice(num1){
+//     return num1;
+// }
+// console.log(calculatePrice(100)); // 100 
+
+//rest operator '...' it will add elements into a single entity 
+function calculatePrice(val1, val2 ,...num1){
+    return num1;
+}
+//console.log(calculatePrice(100,200,300)); // [ 100, 200, 300 ] 
+//console.log(calculatePrice(100,200,300,400)); // [ 300, 400 ] , val1-->100 , val2 --> 200
+
+const user = {
+    username: "Shivam",
+    age: 21
+}
+function userDetails(anyobject){
+    console.log(`${anyobject.username} is ${anyobject.age} years old.`);
+}
+//userDetails(user) // Shivam is 21 years old.
+//we could have also passed object like this 
+userDetails({
+    username:"Shiv",
+    age: 24
+}) // Shiv is 24 years old.
+
+// we can pass array same as object 
