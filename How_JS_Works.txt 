@@ -1,0 +1,82 @@
+Javascript is a single threaded , everything in it act as a process. 
+ 
+JavaScript is indeed single-threaded, which means it executes one task at a time. 
+However, JavaScript in web browsers can leverage multiple threads for certain tasks, 
+such as handling network requests and rendering, through mechanisms like Web Workers. 
+
+
+
+ 
+  Javascript Execution Context 
+     It means that how js executes the code 
+
+     Firstly Global Execution Context always gets created having all the context.
+     Global Execution Context: Represents the global scope of the program.
+     It's created when your JavaScript code first runs.
+     This variable is used to access global execution context.
+     Node / bun / browser all have different execution context so this variable gives empty object in node and windows object in browser.
+
+     Second Execution Context is Function / Functional Execution Context.
+     These are created when a function is called.
+     Each function call has its own execution context, with its own memory for variables and functions.
+     When a function is done executing, its context is removed from the call stack.
+
+     thirdly There is another Execution Context namely Eval Execution Context.
+     This is less commonly used and is primarily associated with the eval() function, which allows dynamic code execution. 
+     It has its own execution context but is not used frequently due to potential security and performance issues.
+
+
+  
+
+
+
+
+     Step  (1)  Firstly Global Execution Context is Created then 
+                Javascript code is executed in two phases :- 
+     Step   (2) i) Memory Creation Phase  or Creation Phase :=> in this phase memory gets allocated to variables , functions no code is executed in this phase. 
+                   All the variables are intialised to 'undefined' and functions are already having their definition from the code.
+
+     Step   (3) ii) Execution phase :=> In this phase code gets Executed. 
+                    All the variable are assigned their values.
+                    Whenver their is function Called It Does not have any thing to assign as its definitionis already assigned to it 
+                    Hence, it creates its own Execution Context  known as New Executional Context (new Sandbox) .
+                        In this New Executional Context there is new variable environment as well as execution thread.
+                            Now Memory Creation Phase as well as Execution Phase will be created for this execution context
+                                In Memory Creation Phase variables , functions will be allocated memory . 
+                                    In This phase of the function arguments will be assigned undefined and functions will be provided their definition.
+                                In Execution Phase the function parameters are are assigned values from the arguments and the code is executed,
+                                    then if function returns a value , it will be returned to its global execution context or parent execution context.
+                                    Now the execution context gets deleted after execution of the code.
+
+                                    This is known as "scope chain".
+                                    These contexts form a "scope chain" that allows inner contexts to access variables from their outer contexts. 
+                                    This concept is essential for understanding variable scoping.
+
+                                    Think of a "scope chain" like a set of nesting dolls. 
+                                    Each doll represents a different level of your code. 
+                                    When you're inside one doll, you can see and use things from the doll just outside of it.
+                                    So, if you're inside the innermost doll, you can see and use things from the doll just outside it, 
+                                    but not from dolls further out. 
+                                    
+                                    This idea of looking inside one doll after another is what we mean by a "scope chain."
+                                    It's crucial because it helps JavaScript know where to find and use variables. 
+                                    If you ask for a variable, JavaScript looks in the innermost doll first. 
+                                    If it doesn't find it, it looks in the next outer doll and keeps going until it finds what it needs or reaches the outermost doll (the global scope).
+
+
+
+
+
+
+Call Stack : This follows LIFO principle i.e Last In First Out. The most recent called entitity will be removed first .
+  Let's suppose function1 does not have any function inside it but function2 has function3 inside it. 
+
+  Step 1) Global execution context  
+  Step 2 ) function1 if it does not have any another function inside it will be removed from the callstack after it's execution.
+  Step 3 ) function2 will be called then it will call function3 .
+  Step 4 ) function3 will be executed first and then removed from the callstack .
+  step 5 ) function2 will be  complete its execution and then removed from the callstack.
+  step 6 ) now the global execution context will be removed from the callstack after all the execution all the entire code.
+
+
+          
