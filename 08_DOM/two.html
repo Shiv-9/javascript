@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom | From Hitesh </title>
+</head>
+<body style="background-color: black; color:white" >
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>    
+</body>
+<script>
+const parent=document.querySelector('.parent')
+//console.log(parent);
+//const children= parent.children // it will return HTMLCollection .
+//console.log(children[1].innerHTML); //Tuesday 
+
+// for (let i = 0; i < parent.children.length; i++) {  
+//     console.log(parent.children[i].innerHTML);
+// }
+// Monday
+// Tuesday
+// Wednesday
+// Thursday
+
+
+// we can apply styling as well on children like children.style.color="green"
+//console.log(parent.firstElementChild); //<div class="day">Monday</div> ==> it provides the entire html element and we can easily target first child using this.
+//console.log(parent.lastElementChild); // we can access the last child using this.
+
+const dayOne = document.querySelector('.day')
+// console.log(dayOne); // <div class="day">Monday</div>
+// console.log(dayOne.parentElement); // it will give us parent element.
+//     // <div class="parent">
+//     //     <div class="day">Monday</div>
+//     //     <div class="day">Tuesday</div>
+//     //     <div class="day">Wednesday</div>
+//     //     <div class="day">Thursday</div>
+//     // </div> 
+// console.log(dayOne.nextElementSibling); // it will give us next sibling .
+// <div class="day">Tuesday</div>
+
+</script>                 
+</html>

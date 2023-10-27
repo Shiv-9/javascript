@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: black; color:white" >
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage (langName){
+       const li = document.createElement('li')
+       li.innerHTML = `${langName}` // we have to traverse entire tree to get the element
+       const element= document.querySelector(".language")
+       element.appendChild(li)
+    }
+    addLanguage('C++')
+    addLanguage('python')
+    addLanguage('Java')
+
+    function addLanguageOptimisedWay(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+
+    addLanguageOptimisedWay("typeScript")
+
+
+    // edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Rust" // notoptimised 
+    const newli = document.createElement('li')
+    newli.textContent = "Rust"
+    secondLang.replaceWith(newli)
+
+    //edit
+   const firstlang = document.querySelector("li:first-Child")
+   firstlang.outerHTML = "<li>Js</li>"
+
+
+   // remove 
+   const lastlang = document.querySelector("li:last-child")
+   lastlang.remove()
+
+</script>
+</html>
