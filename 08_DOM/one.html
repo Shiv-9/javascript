@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Learning DOM </title>
+    <style>
+        .bg-black {
+          background-color: black;
+          color: white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="title" class="heading">Learning about  DOM  from Hitesh  <span style = "display:none" > text test </span> </h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+         <p>Lorem ipsum dolor sit amet.</p> 
+         <ul>
+            <li class='list-item' >One</li>
+            <li class='list-item' >Two</li>
+            <li class='list-item' >Three</li>
+            <li class='list-item' >Four</li>
+         </ul>
+    </div>      
+</body>
+</html>
+
+<!-- whenever we write document  it means windows.document by the object model 
+document.URL => provides us the URL of the web page 
+document.links => provides us the links from the web page , it provides us a HTMLCollections as a rsult which can be converted to arrays for further usage.
+document.links[2] => will give us the second link , this is how we access the the desired links.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+There are various type of selectors for different use cases 
+1) document.getElementById('firstHeading') => This uses 'Id' to find a html element. It returns the entire html element.
+we can get different sections of the from the element like this document.getElementById('firstHeading').id => it will give us id i.e 'title'
+document.getElementById('firstHeading').class will give undefined  
+
+if we want to access using class then we use 'className' instead of class we get the class like this  
+document.getElementById('firstHeading').className  
+
+document.getElementById('heading').getAttribute => it will not work.
+
+document.getElementById('heading').getAttribute('id') => we need to provide 'id' or 'class' i.e which attriobute we want.
+
+document.getElementById('heading').setAttribute('class' , 'first') => it will always override the previous value of class attribute with new value.
+If we want to have the previous attribute as well then we do it like this. 
+document.getElementById('heading').setAttribute('class' , 'first heading')  => it will have both 
+
+we can store the element we get as a result from document.getElementById('heading') like this 
+ const title  = document.getElementById('heading') 
+
+ Now we can apply style on it using this syntax 
+ title.style.whatever_style_you_want 
+ Eg => title.style.backgroundcolor = 'red' 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+title.innerText ==> it will only show the visible text
+'Learning about DOM from Hitesh'
+
+title.textContent ==> it will show all the text no matter visible or not
+'Learning about  DOM  from Hitesh   text test  '
+
+title.innerHTML ==> it will show html elements as well 
+'Learning about  DOM  from Hitesh  <span style="display:none"> text test </span> '
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+document.querySelector('h2')  ==> It will give us the first html element only according to the selector. It accepts all CSS Selectors. 
+We can store its result in a variable , apply style over it 
+<h2>Lorem ipsum dolor sit.</h2>
+
+document.querySelector('.heading') ==> we can any css selector 
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+document.querySelectorAll('css selector') ==> it accepts all the css selectors , can store it in variable and apply style over it.
+It returns all the elements according to the selector in NodeList format.
+NodeList ==> It has forEach() which can be used to loop over the elements , it can be converted to Array and then we can apply filter, map etc.
+
+we have to use indexing in it just like array to access the elements , even when there is only a single elememt then also we have use indexing like this.
+
+const myul = document.querySelectorAll('ul')
+myul[0].style.color = 'green' ==> it will convert all the elements green.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+document.getElementsByClassName('list-item') ==> it returns the HTMLCollection 
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]  
+
+HTMLCollection ==> it does not have any method of looping over the resultant elements 
+We need to convert the elements into an array to loop over it and apply filter or map according to the need.
+
+differnece between NodeList and HTMLCollection
+
+                               NodeList                       |                  HTMLCollection                             
+    it consist of document nodes.                             |         it consists of document elements
+    it has forEach() to loop over the elements.               |         it does not have any existing looping method like forEach() but for loop , while loops etc can still be applied on it.
+    it can only be accessed by using indexing method          |         it can be accessed by indexing as well as their names.
+
+    
+Convert NodeList or HTMLCollection to Array
+Array.from(NodeList/HTMLCollection)     
+                                                            
+-->
+
+
+
+
+
