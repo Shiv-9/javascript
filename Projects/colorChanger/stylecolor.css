@@ -19,16 +19,24 @@ html {
   }
   
   #grey {
-    background: grey;
+    background: rgb(77, 76, 76);
   }
   
   #white {
     background: white;
   }
   #blue {
-    background: blue;
+    background: rgb(12, 12, 201);
   }
   #yellow {
-    background: yellow;
+    background: rgb(245, 245, 8);
   }
-  
+  #purple {
+    background: rgb(104, 1, 104);
+  }
+  #green {
+    background: rgb(3, 216, 3);
+  }
+  #orange {
+    background: rgb(228, 125, 9);
+  }
