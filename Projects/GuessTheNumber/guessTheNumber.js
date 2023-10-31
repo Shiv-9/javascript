@@ -60,7 +60,7 @@ function displayGuess(guess) {
   userInput.value = ''
   guessSlot.innerHTML +=`${guess},  `
   chances++
-  remaining.innerHTML = `${11-chances} `
+  remaining.innerHTML = `${11-chances}`
 }
 
 
@@ -79,15 +79,16 @@ function endGame() {
 }
 
 function newGame() {
- const newGameButton = document.querySelector('#newGame')
- newGameButton.addEventListener( function (){
-  randomNumber = parseInt(Math.random()*100+1);
-  preGuess = []
-  chances = 1 
-  guessSlot.innerHTML = ''
-  remaining.innerHTML = `${11-chances} `
-  userInput.removeAttribute('disabled')
-  startOver.removeChild(p)
-  playGame = true
- })
+  const newGameButton = document.querySelector('#newGame');
+  newGameButton.addEventListener('click', function (e) {
+    randomNumber = parseInt(Math.random() * 100 + 1);
+    prevGuess = [];
+    chances = 1;
+    guessSlot.innerHTML = '';
+    remaining.innerHTML = `${11 - chances} `;
+    userInput.removeAttribute('disabled');
+    startOver.removeChild(p);
+    lowOrHi.innerHTML = ''
+    playGame = true;
+  });
 }
