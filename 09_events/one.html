@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // we can write onlink directly in html but it is adviable to do whin core js
+    // onclick here can cause different problems as it does not a lot of information with it , so we use event listeners
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+    // this is the best approach 
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     console.log("owl clicked ");
+    // })
+    
+
+
+    
+    // Events to study about it. 
+    // type, timestamp, preventDefault
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    //Event propagation -> the process of how events are handled and propagated through the DOM (Document Object Model) tree.   
+    // It is of Two types 1) event bubbling  2) event capturing
+    // 1) Event Bubbling : - In this we move from the target element to the root element of the DOM tree i.e we move up the tree.
+    //                       By default addEventListener is in this phase , i.e the thirs parameter tis false.
+    // 2) Event Capturing :- In this we move from the root element to down the DOM tree , the third parameter should be true. 
+    
+
+    //   document.getElementById('images').addEventListener('click', function(e){  //----       if I click on the image of owl then firstlt "owl clicked" will be printed and then   
+        //                                                                         //    |      "clicked inside the ul" will be printed as the event is propagating the DOM tree in event bubbling manner
+    //       console.log("clicked inside the ul");                                 //    |      i.e it will move up the tree.
+    //   }, false)                                                                 //    | ---> 
+    //  document.getElementById('owl').addEventListener('click', function(e){      //    |      if I make the third parameter as true and then execute these line then output is firstly "clicked inside the ul" will be printed.
+    //      console.log("owl clicked");                                            //    |      then "owl clicked" will be printed as the event is propagating the DOM tree in event capturing manner
+    //  }, false)                                                                  //----       i.e it will move from root to the target element
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+    
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+   
+    
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.tagName);
+    //     if (e.target.tagName === 'IMG') {
+    //         console.log(e.target.id);
+    //         let removeIt = e.target.parentNode
+    //         removeIt.remove()
+    //     }    
+    // })
+    
+    //removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
