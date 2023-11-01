@@ -1,0 +1,27 @@
+Javascript is single threaded , synchronous i.e each operation waits for the last one to 
+complete before executing.
+
+Code is of two type :-
+
+Blocking code :- it blocks or stops the flow of code untill a operation is completed.
+                 Read file sync.
+
+Non Blocking code :- it does not block the execution of code i.e other operations are 
+                     executed meanwhile a certain operation is executing on the side.
+                      Read File Async.
+
+
+Both Blocking as well as Non Blocking code are used according to the usecase no one is better than other. 
+
+
+Now look as the diagram for refernce.
+
+Different calls are made from the call stack to the web API where there is a Register call back .
+ Register call back --> it stores the calls and events and when the execution is to be done it inserts 
+                        the call back into the Task Queue from which the result it inserted insert the
+                        call stack. 
+
+ fetch also works the same way as register  but it uses the concept of promises which results in a high priority queue, i.e it is executed imeediately when received.
+
+ 
+                      

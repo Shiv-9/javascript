@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script> 
+// it is a method but it calls API as well. 
+// it accepts a handler -> it can be a function without name or a refernece to a function . 
+//   setTimeout(function (){              // it executes the code after the mention time interval
+//     console.log("Shivam");     //setInterval takes the time interval and do the task repeatedly
+//   },2000) 
+
+// const sayName = function() {
+//     console.log("Shivam");
+//   }
+
+//   setTimeout(sayName, 2000); 
+
+  const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)    // it accepts refernce to the setTimeOut which we want to cancel 
+        console.log("STOPPED")    //if it is not executed till the time is over   
+    })  
+
+</script>
+</html>
