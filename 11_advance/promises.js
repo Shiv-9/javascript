@@ -124,3 +124,5 @@ fetch('')
 console.log(error);
 })
    
+// fetch k liye ek alg queue bn jaati h jisse Micro Task Queue or priority queue or fetch queue bolte h.
+// ye sbse pehle execute ho kr call stack pr jayega agr sbse bhale hi is queue aur call back queue ka kaam ek saath kyu na hua ho  
